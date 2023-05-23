@@ -5,8 +5,8 @@
 <%posts.forEach(function(post){%>
     <h1><%= post.title %></h1>
     <p>
-    <%= post.content + "..." %>
-    <a href="/posts/<%=post.title%>" >Read more</a>
+    <%= post.content%>
+    <a href="/posts/<%=post.title%>" >...Read more</a>
     </p>
 <%});%>
 
