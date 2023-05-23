@@ -65,9 +65,12 @@ app.post("/compose",function (req,res) {
 
 
 app.get("/posts/:postName",function (req,res) {
- let requestedTitle=_.lowerCase(req.params.postName);
+//  let requestedTitle=_.lowerCase(req.params.postName);
+   let requestedTitle=req.params.postName;
+
  Blog.find({title:requestedTitle}).then(function (oldBlog) {
 //    console.log("Match found");console.log(oldBlog[0].toObject().title);
+   
     res.render("post",{title:requestedTitle,content:oldBlog[0].toObject().post});  
   });  
 });
